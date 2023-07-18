@@ -1,0 +1,34 @@
+# https://github.com/ray-project/ray/blob/master/rllib/tuned_examples/dqn/atari-dist-dqn.yaml
+breakout-dist-dqn:
+  local_dir: "output/rl-loop"
+  env: BreakoutNoFrameskip-v4
+  run: DQN
+  checkpoint_freq: 1500
+  checkpoint_at_end: True
+  stop:
+    episode_reward_mean: 420
+    timesteps_total: 20000000
+  config:
+    seed: 17
+    num_workers: 10
+    num_gpus: 1
+    framework: tf
+    double_q: false
+    dueling: false
+    num_atoms: 51
+    noisy: false
+    replay_buffer_config:
+      type: MultiAgentReplayBuffer
+      capacity: 1000000
+    learning_starts: 20000
+    n_step: 1
+    target_network_update_freq: 8000
+    lr: .0000625
+    adam_epsilon: .00015
+    hiddens: [ 512 ]
+    rollout_fragment_length: 4
+    train_batch_size: 32
+    exploration_config:
+      epsilon_timesteps: 200000 # 200000 #500000
+      final_epsilon: 0.01
+    min_sample_timesteps_per_reporting: 10000
