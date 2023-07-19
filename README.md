@@ -7,7 +7,6 @@ Citation:
     title={IxDRL: A Novel Explainable Deep Reinforcement Learning Toolkit based on Analyses of Interestingness},
     author={Pedro Sequeira and Melinda Gervasio},
     booktitle={Proceedings of The 1st World Conference on eXplainable Artificial Intelligence (xAI 2023)},
-    author={Pedro Sequeira and Melinda Gervasio},
     year={2023},
     eprint={2307.08933},
     archivePrefix={arXiv},
